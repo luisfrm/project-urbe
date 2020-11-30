@@ -1,5 +1,5 @@
 <template>
-  <section class="d-flex justify-content-center row">
+  <section v-if="dataMovies.length > 0" class="d-flex justify-content-center row">
     <div id="movieSlides" class="carousel slide col-12 col-md-3 px-0" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#movieSlides" :data-slide-to="index" :class="{active: index == 0}" v-for="(movie, index) in dataMovies" :key="index"></li>

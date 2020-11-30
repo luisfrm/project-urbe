@@ -1,7 +1,7 @@
 <template>
   <a class="card" :href="url ? url : 'unknown'" :target="_blank ? _blank : ''">
     <div class="card-header">
-      <img :src="img ? img : ''" :alt="id + ' image'">
+      <img :src="img ? img : '/assets/no-photo.jpg'" :alt="id + ' image'">
     </div>
     <div class="card-body">
       <p v-if="title">{{title}}</p>

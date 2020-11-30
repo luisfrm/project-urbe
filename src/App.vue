@@ -2,7 +2,7 @@
   <div>
     <Header/>
     <Slider/>
-    <div class="row mt-4">
+    <div v-if="movies.length > 0" id="movies" class="row mt-4">
       <div class="col-12 col-md-4">
         <Movie/>
       </div>
@@ -17,6 +17,11 @@ import Movie from './components/movie-container'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      movies: []
+    }
+  },
   components: {
     Header, Slider, Movie
   }
