@@ -48,7 +48,7 @@ export default {
       data = this
       axios({
         method: 'GET',
-        url: `http://www.omdbapi.com/?apikey=435c3351&t=${query}`
+        url: `https://www.omdbapi.com/?apikey=435c3351&t=${query}`
       }).then(function (response) {
         data.dataMovies.push(response.data)
       }).catch((err) => {
