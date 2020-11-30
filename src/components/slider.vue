@@ -54,7 +54,6 @@ export default {
       }).catch((err) => {
         console.log(err + ' - error in the request')
       })
-      console.log(data)
     },
     fillMovies: function() {
       this.fetch('The Avengers')
