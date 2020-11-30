@@ -1,26 +1,29 @@
 <template>
   <div>
+    <Header/>
+    <Slider/>
+    <div class="row mt-4">
+      <div class="col-12 col-md-4">
+        <Movie/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import axios from 'axios'
-axios({
-  method: 'GET',
-  url: 'http://www.omdbapi.com/?i=tt3896198&apikey=435c3351'
-}).then(function (response) {
-    console.log(response);
-  })
+import Header from './components/header'
+import Slider from './components/slider'
+import Movie from './components/movie-container'
 
 export default {
   name: 'App',
   components: {
-    
+    Header, Slider, Movie
   }
 }
 </script>
 
 <style lang="scss">
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'css/bootstrap.min.css';
+
 </style>
