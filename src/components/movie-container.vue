@@ -1,12 +1,16 @@
 <template>
-  <a class="card" :href="url ? url : 'unknown'" :target="_blank ? _blank : ''">
-    <div class="card-header">
-      <img :src="img ? img : '/assets/no-photo.jpg'" :alt="id + ' image'">
+  <div class="card">
+    <div class="card-header p-0 container-header">
+      <img :src="img ? img : 'https://i.imgur.com/EPDBVqq.jpg'" :alt="id + ' image'" class="img-fluid">
     </div>
     <div class="card-body">
-      <p v-if="title">{{title}}</p>
+      <p class="body-title" v-if="title">{{title}}</p>
+      <p class="body-text" v-if="plot">{{plot}}</p>
+      <p class="body-text" v-if="runtime"><span class="font-weight-bold">Runtime: </span> {{runtime}}</p>
+      <p class="body-text" v-if="rating"><span class="font-weight-bold">Rating: </span>{{rating}}</p>
+      <p class="body-text" v-if="genre"><span class="font-weight-bold">Genre: </span>{{genre}}</p>
     </div>
-  </a>
+  </div>
 </template>
 
 <script>
@@ -16,10 +20,14 @@ export default {
 
     }
   },
-  props: ['img', 'url', '_blank', 'title', 'desc', 'id']
+  props: ['img', 'title', 'id', 'plot', 'rating', 'runtime', 'genre']
 }
 </script>
 
 <style>
-
+/* General styles */
+.container-header img {
+  height: 425px!important;
+  width: 100%;
+}
 </style>
