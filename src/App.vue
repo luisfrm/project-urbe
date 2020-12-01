@@ -2,8 +2,8 @@
   <div>
     <Header/>
     <Slider/>
-    <div v-if="movies.length > 0" id="movies" class="row mt-4 px-5 my-4 w-100">
-      <div v-for="(movie, index) in movies" :key="index" class="col-12 col-md-3 movie-container my-5">
+    <div v-if="movies.length > 0" id="movies" class="row mx-0 px-0 px-md-5 my-4 w-100">
+      <div v-for="(movie, index) in movies" :key="index" class="col-12 col-md-3 movie-container px-0 px-md-3 my-4 my-md-5">
         <Movie
         @click="selectMovie(index)"
         :img="movie.Poster"

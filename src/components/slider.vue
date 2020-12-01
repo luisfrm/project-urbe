@@ -1,5 +1,5 @@
 <template>
-  <section v-if="dataMovies.length > 0" class="d-flex justify-content-center row w-100">
+  <section v-if="dataMovies.length > 0" class="d-flex justify-content-center row w-100 mx-0">
     <div id="movieSlides" class="carousel slide col-12 col-md-3 px-0" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#movieSlides" :data-slide-to="index" :class="{active: index == 0}" v-for="(movie, index) in dataMovies" :key="index"></li>
@@ -67,7 +67,7 @@ export default {
 <style lang='scss'>
 #movieSlides {
   .card-body {
-    height: 260px;
+    height: 300px;
   }
 
   img {
