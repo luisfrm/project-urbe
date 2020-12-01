@@ -2,7 +2,7 @@
   <div>
     <Header/>
     <Slider/>
-    <div v-if="movies.length > 0" id="movies" class="row mt-4 px-5 my-4">
+    <div v-if="movies.length > 0" id="movies" class="row mt-4 px-5 my-4 w-100">
       <div v-for="(movie, index) in movies" :key="index" class="col-12 col-md-3 movie-container my-5">
         <Movie
         @click="selectMovie(index)"
