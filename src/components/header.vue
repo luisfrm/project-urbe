@@ -7,12 +7,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" v-for="(navItem, index) in navItems" :key="index">
-        <a class="nav-link" :href="navItem.href" :target="navItem._blank">{{navItem.title}}</a>
+        <a class="nav-link" :href="navItem.href ? navItem.href : ''" :target="navItem._blank" :data-toggle="navItem.data_toggle ? navItem.data_toggle : ''" :data-target="navItem.data_target ? navItem.data_target : ''">{{navItem.title}}</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    </form>
   </div>
 </nav>
 </template>
@@ -23,9 +20,10 @@ export default {
     return {
       navTitle: 'WikiMovie',
       navItems: [
-        { title: 'Home', href: '#' },
-        { title: 'About Us', href: '/about-us', _blank: true },
-        { title: 'Contact Us', href: '/contact-us' }
+        { title: 'Home', href: '/#' },
+        { title: 'About Me', data_target: '#aboutme-modal', data_toggle: "modal" },
+        { title: 'About It', data_target: '#aboutit-modal', data_toggle: "modal" },
+        { title: 'Contact Me', data_target: '#contactme-modal', data_toggle: "modal" }
       ]
     }
   }

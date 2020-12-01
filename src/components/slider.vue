@@ -1,5 +1,5 @@
 <template>
-  <section v-if="dataMovies.length > 0" class="d-flex justify-content-center row">
+  <section v-if="dataMovies.length > 0" class="d-flex justify-content-center row w-100">
     <div id="movieSlides" class="carousel slide col-12 col-md-3 px-0" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#movieSlides" :data-slide-to="index" :class="{active: index == 0}" v-for="(movie, index) in dataMovies" :key="index"></li>
@@ -11,7 +11,7 @@
               <img class="img-fluid" :src="movie.Poster" :alt="index + 'slide'">
             </div>
             <div class="card-body">
-              <p><span class="font-weight-bold">Title: </span><span>{{ movie.Title }}</span></p>
+              <p class="body-title">{{ movie.Title }}</p>
               <p><span class="font-weight-bold">Plot: </span><span>{{movie.Plot}}</span></p>
               <p><span class="font-weight-bold">Plot: </span><span>{{movie.Awards}}</span></p>
             </div>
@@ -31,11 +31,7 @@
 </template>
 
 <script>
-import 'bootstrap'
 import axios from 'axios'
-const $ = require('jquery')
-window.$ = $
-let data = ''
 
 export default {
   data() {
@@ -45,7 +41,7 @@ export default {
   },
   methods: {
     fetch: function(query) {
-      data = this
+      let data = this
       axios({
         method: 'GET',
         url: `https://www.omdbapi.com/?apikey=435c3351&t=${query}`
@@ -60,7 +56,6 @@ export default {
       this.fetch('Age of ultron')
       this.fetch('black panther')
       this.fetch('avengers endgame')
-      console.log(this.dataMovies)
     }
   },
   mounted() {
@@ -70,10 +65,9 @@ export default {
 </script>
 
 <style lang='scss'>
-@import '../css/bootstrap.min.css';
 #movieSlides {
   .card-body {
-    height: 240px;
+    height: 260px;
   }
 
   img {
